@@ -19,11 +19,34 @@ namespace Core.Specifications
         
         new List<Expression<Func<T,object>>>();
 
-        object ISpecification<T>.Includes => throw new NotImplementedException();
+        public Expression<Func<T, object>> OrderBy {get; private set;}
+
+        public Expression<Func<T, object>> OrderByDescending {get; private set;}
+
+        public int Take {get; private set;}
+
+        public int Skip {get; private set;}
+
+        public bool IsPagingEnabled {get; private set;}
 
         protected void AddInclude(Expression<Func<T,object>> includeExpression)
         {
             Include.Add(includeExpression);
+        }
+        protected void AddOrderBy(Expression<Func<T,object>> orderByExpression)
+        {
+            OrderBy = orderByExpression;
+        }
+          protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
+        {
+            OrderByDescending = orderByDescExpression;
+        }
+         protected void ApplyPaging(int skip, int take)
+        {
+            Skip = skip;
+            Take = Take;
+            IsPagingEnabled = true;
+
         }
     }
 }

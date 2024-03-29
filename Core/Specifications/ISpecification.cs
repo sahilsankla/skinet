@@ -1,4 +1,3 @@
-
 using System.Linq.Expressions;
 
 namespace Core.specifications
@@ -7,6 +6,12 @@ namespace Core.specifications
     {
         Expression<Func<T, bool>> Criteria{get;}
         List<Expression<Func<T, object>>> Include{get;}
-        object Includes { get; }
+        
+        Expression<Func<T, object>>OrderBy {get;}
+        Expression<Func<T, object>>OrderByDescending {get;}
+
+        int Take{get;}
+        int Skip{get;}
+        bool IsPagingEnabled {get;}
     }
 }
