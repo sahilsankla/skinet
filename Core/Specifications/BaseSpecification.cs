@@ -44,7 +44,7 @@ namespace Core.Specifications
          protected void ApplyPaging(int skip, int take)
         {
             Skip = skip;
-            Take = Take;
+            Take = take;
             IsPagingEnabled = true;
 
         }
