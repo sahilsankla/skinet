@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BasketService } from '../../basket/basket.service';
 import { BasketItem } from '../../basket/basket';
+import { AccountService } from '../../account/account.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +10,7 @@ import { BasketItem } from '../../basket/basket';
 })
 export class NavBarComponent {
 
-constructor(public basketService: BasketService){}
+constructor(public basketService: BasketService, public accountService: AccountService){}
 
 getCount(items: BasketItem[]){
   return items.reduce((sum, item) => sum + item.quantity, 0);

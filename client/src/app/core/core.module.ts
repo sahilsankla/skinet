@@ -9,6 +9,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbComponent } from 'xng-breadcrumb';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -28,7 +30,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       preventDuplicates: true
     }),
     BreadcrumbComponent,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    SharedModule
 
   ],
   exports:[
